@@ -1,13 +1,30 @@
 body {
   margin: 0;
+  /* Elimina el margen predeterminado del navegador alrededor del cuerpo del documento. 
+  Esto asegura que el contenido ocupe todo el espacio disponible sin espacios en blanco no deseados. */
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  /* Establece la fuente del texto del cuerpo. La lista incluye varias fuentes del sistema y fuentes sans-serif. 
+     -apple-system y BlinkMacSystemFont son fuentes del sistema para dispositivos Apple, 
+     mientras que las otras son fuentes comunes en diferentes sistemas operativos. 
+     Si la primera fuente no está disponible, el navegador intentará usar la siguiente en la lista. */
+
   -webkit-font-smoothing: antialiased;
+  /* Mejora la suavidad de las fuentes en navegadores WebKit (como Chrome y Safari), 
+     haciendo que las fuentes se vean más lisas y menos pixeladas. */
+  
   -moz-osx-font-smoothing: grayscale;
+  /* Mejora la suavidad de las fuentes en navegadores Firefox en macOS, 
+     utilizando un suavizado en escala de grises para hacer que las fuentes se vean más agradables. */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  /* Establece la fuente para el texto dentro de elementos <code>. 
+     Estas fuentes son típicamente utilizadas para mostrar código fuente y texto monoespaciado.
+     La lista incluye fuentes populares para desarrollo y programación, 
+     comenzando con source-code-pro, que es una fuente diseñada específicamente para código. */
 }

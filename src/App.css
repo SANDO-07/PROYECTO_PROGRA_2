@@ -1,38 +1,166 @@
+body {
+  background-image: url('/src/1.png'); 
+  /* Establece una imagen de fondo para el cuerpo del documento. La imagen se carga desde la ruta especificada. */
+  
+  background-size: cover;
+  /* Asegura que la imagen de fondo cubra todo el área del cuerpo, manteniendo su relación de aspecto. */
+  
+  background-repeat: no-repeat;
+  /* Evita que la imagen de fondo se repita si es más pequeña que el área del cuerpo. */
+  
+  background-attachment: fixed;
+  /* Establece que la imagen de fondo permanezca fija en su posición al desplazarse por la página. */
+}
+
+.error-message {
+  color: red;
+  /* Establece el color del texto de los mensajes de error en rojo, para que sean fácilmente visibles. */
+  
+  margin-top: 10px;
+  /* Agrega un margen superior de 10 píxeles para separar el mensaje de error de otros elementos. */
+  
+  font-size: 1rem;
+  /* Establece el tamaño de la fuente en 1 rem, que es relativo al tamaño de fuente del elemento raíz. */
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* Utiliza el modelo de caja flexible (flexbox) para organizar los elementos hijos. */
+  
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* Centra los elementos hijos horizontalmente en el contenedor. */
+  
+  align-items: center;
+  /* Centra los elementos hijos verticalmente en el contenedor. */
+  
+  height: 100vh;
+  /* Establece la altura del contenedor a 100% de la altura de la ventana del navegador. */
+}
+
+.calculator {
+  background-color: #a0a0a0;
+  /* Establece un color de fondo gris claro para la calculadora. */
+  
+  border-radius: 10px;
+  /* Aplica un radio de borde de 10 píxeles para esquinas redondeadas. */
+  
+  padding: 20px;
+  /* Agrega un relleno interno de 20 píxeles alrededor del contenido de la calculadora. */
+  
+  width: 320px;
+  /* Establece un ancho fijo de 320 píxeles para la calculadora. */
+  
+  border: 3px solid rgb(255, 252, 50); 
+  /* Agrega un borde de 3 píxeles de grosor y color amarillo claro alrededor de la calculadora. */
+}
+
+.calculator-screen {
+  width: 90%;
+  /* Establece el ancho de la pantalla de la calculadora al 90% del ancho del contenedor padre. */
+  
+  height: 80px;
+  /* Establece una altura fija de 80 píxeles para la pantalla de la calculadora. */
+  
+  background-color: #252525;
+  /* Establece un color de fondo oscuro para la pantalla de la calculadora. */
+  
+  color: rgb(255, 252, 50);
+  /* Establece el color del texto en la pantalla a amarillo claro. */
+  
+  font-size: 3rem;
+  /* Establece un tamaño de fuente grande para el texto en la pantalla. */
+  
+  border: none;
+  /* Elimina el borde predeterminado de la pantalla. */
+  
+  border-radius: 5px;
+  /* Aplica un radio de borde de 5 píxeles para esquinas redondeadas. */
+  
+  padding: 15px;
+  /* Agrega un relleno interno de 15 píxeles alrededor del contenido de la pantalla. */
+  
+  margin: 0 auto 10px auto; 
+  /* Establece márgenes automáticos a los lados (centrando horizontalmente) y un margen inferior de 10 píxeles. */
+  
+  text-align: right;
+  /* Alinea el texto a la derecha, que es común en las pantallas de calculadoras. */
+}
+
+.calculator-keys {
+  display: grid;
+  /* Utiliza un diseño de cuadrícula para organizar las teclas de la calculadora. */
+  
+  grid-template-columns: repeat(4, 1fr);
+  /* Define 4 columnas de igual tamaño en la cuadrícula. */
+  
+  grid-gap: 10px;
+  /* Establece un espacio de 10 píxeles entre las filas y columnas de la cuadrícula. */
+}
+
+button {
+  height: 60px;
+  /* Establece una altura fija de 60 píxeles para todos los botones. */
+  
+  background-color: #e5e6e0;
+  /* Establece un color de fondo gris claro para los botones. */
+  
+  border: none;
+  /* Elimina el borde predeterminado de los botones. */
+  
+  border-radius: 5px;
+  /* Aplica un radio de borde de 5 píxeles para esquinas redondeadas. */
+  
+  font-size: 1.5rem;
+  /* Establece un tamaño de fuente grande para el texto en los botones. */
+  
+  box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+  /* Agrega una sombra sutil para dar un efecto de elevación a los botones. */
+  
+  cursor: pointer;
+  /* Cambia el cursor a una mano al pasar sobre el botón, indicando que es interactivo. */
+  
+  transition: background-color 0.3s ease;
+  /* Añade una transición suave para cambios en el color de fondo. */
+}
+
+button:active {
+  background-color: #d1d2d7;
+  /* Cambia el color de fondo cuando el botón es presionado (estado activo). */
+  
+  box-shadow: none;
+  /* Elimina la sombra al presionar el botón, para un efecto de "hundimiento". */
+}
+
+button.key-operator {
+  background-color: #f08a5d;
+  /* Establece un color de fondo diferente (naranja) para los botones de operación. */
+  
   color: white;
+  /* Cambia el color del texto a blanco para mejorar la visibilidad sobre el fondo naranja. */
 }
 
-.App-link {
-  color: #61dafb;
+button.key-equal {
+  background-color: #f08a5d;
+  /* Establece el mismo color de fondo (naranja) para el botón de igual. */
+  
+  color: black;
+  /* Cambia el color del texto a negro para un buen contraste. */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button.key-clear {
+  background-color: #f08a5d;
+  /* Establece el mismo color de fondo (naranja) para el botón de limpiar. */
+  
+  color: white;
+  /* Cambia el color del texto a blanco para mejorar la visibilidad. */
+}
+
+button.span-2 {
+  grid-column: span 2;
+  /* Hace que el botón ocupe el espacio de 2 columnas en la cuadrícula, útil para botones como "0" o "igual". */
+}
+
+button:hover {
+  background-color: #d1d2d7;
+  /* Cambia el color de fondo al pasar el mouse sobre el botón, para indicar que es interactivo. */
 }
